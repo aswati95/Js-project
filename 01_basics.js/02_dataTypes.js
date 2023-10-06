@@ -27,3 +27,22 @@ let state;
 
 console.log(typeof undefined); // undefined
 console.log(typeof null); // object
+
+// let number = 33
+// console.log(typeof number); //number
+// let stringNumber = String(number);
+// console.log(typeof stringNumber); //string
+// console.log(stringNumber);  //33
+
+
+// let name = "swati"
+// console.log(typeof name); //string
+// let changeToNumber = Number(name);
+// console.log(typeof changeToNumber); //number
+// console.log(changeToNumber); //NaN
+
+// let isLoggedIn = "swati";
+// console.log(typeof isLoggedIn); //string
+// let booleanIsLoggedIn = Boolean(isLoggedIn);
+// console.log(typeof booleanIsLoggedIn); //boolean
+// console.log(booleanIsLoggedIn); //true
