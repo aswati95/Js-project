@@ -163,3 +163,9 @@ script.js file ................................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // document.body.onclick = (e) =>
 //   (document.body.style.backgroundColor =
 //     e.target.dataset.color || document.body.style.backgroundColor);
+
+
+// .................. we use an arrow function for the click event, directly access the dataset.color property of the clicked element, 
+// and use a ternary operator to set the background color. If dataset.color is falsy, it falls back to the existing background color. 
+// document.body.onclick = e => document.body.style.backgroundColor = e.target.dataset.color || document.body.style.backgroundColor;
+
