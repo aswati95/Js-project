@@ -1,0 +1,165 @@
+project 1:  Change the Bckground Color 
+index.html file ....................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <title>JavaScript Background Color Switcher</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/" aria-current="page">Home</a>
+      <a target="_blank" href="https://www.youtube.com/@chaiaurcode"
+        >Youtube channel</a
+      >
+    </nav>
+    <div class="canvas">
+      <!-- <a
+        style="
+          background-color: #fff;
+          padding: 10px 30px;
+          border-radius: 8px;
+          color: #212121;
+          text-decoration: none;
+          border: 2px solid #212121;
+        "
+        href="../index.html"
+        >Back to Home Page</a
+      > -->
+      <h1>Color Scheme Switcher</h1>
+      <span class="button" data-color="grey" id="grey"></span>
+      <span class="button" data-color="white" id="white"></span>
+      <span class="button" data-color="blue" id="blue"></span>
+      <span class="button" data-color="yellow" id="yellow"></span>
+      <h2>
+        Try clicking on one of the colors above
+        <span>to change the background color of this page!</span>
+      </h2>
+    </div>
+    <script src="chaiaurcode.js"></script>
+  </body>
+</html>
+
+script.js file ................................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//................Change color using Switch() case
+// const buttons = document.querySelectorAll('.button');
+// const body = document.querySelector('body');
+// buttons.forEach((button) => {
+//   button.addEventListener('click', function (e) {
+//     const id = e.target.id;
+//     console.log(id);
+//     switch (id) {
+//       case 'grey':
+//       case 'white':
+//       case 'blue':
+//       case 'yellow':
+//         body.style.backgroundColor = id;
+//         break;
+//       default:
+//         console.log('Invalid Choice');
+//     }
+//   });
+// });
+
+//................Change color using colorMap object{} case
+// const buttons = document.querySelectorAll('.button');
+// const body = document.querySelector('body');
+// const colorMap = {
+//   grey: 'grey',
+//   white: 'white',
+//   blue: 'blue',
+//   yellow: 'yellow',
+// };
+// buttons.forEach((button) => {
+//   button.addEventListener('click', (e) => {
+//     const id = e.target.id;
+//     body.style.backgroundColor = colorMap[id];
+//   });
+// });
+
+//................Change color using event handler
+// const body = document.querySelector('body');
+// document.querySelector('.canvas').addEventListener('click', (e) => {
+//   if (e.target.classList.contains('button')) {
+//     const id = e.target.id;
+//     body.style.backgroundColor = id;
+//   }
+// });
+
+//................Change color using arrow => function
+// document.querySelector('.canvas').addEventListener('click', (e) => {
+//   const id = e.target.id;
+//   if (['grey', 'white', 'blue', 'yellow'].includes(id)) {
+//     document.body.style.backgroundColor = id;
+//   }
+// });
+
+//................Change color using ternary ? : operator
+// document.querySelector('.canvas').addEventListener('click', (e) => {
+//   const color = e.target.getAttribute('data-color');
+//   document.body.style.backgroundColor = color
+//     ? color
+//     : document.body.style.backgroundColor;
+// });
+//................Change color using nullish coalescing operator (??)
+// document.querySelector('.canvas').addEventListener('click', (e) => {
+//   const color = e.target.getAttribute('data-color');
+//   document.body.style.backgroundColor =
+//     color ?? document.body.style.backgroundColor;
+// });
+
+// ............. using nullish coalescing operator directly within the document.body.style.backgroundColor assignment.
+// document.querySelector('.canvas').addEventListener('click', (e) => {
+//   const color = e.target.getAttribute('data-color');
+//   document.body.style.backgroundColor =
+//     color || document.body.style.backgroundColor;
+// });
+
+// using nullish coalescing operator directly to set the background color.
+// document.querySelector('.canvas').addEventListener('click', (e) => {
+//   document.body.style.backgroundColor =
+//     e.target.getAttribute('data-color') ?? document.body.style.backgroundColor;
+// });
+
+// combines the event delegation, nullish coalescing operator, and arrow functions:
+// document
+//   .querySelector('.canvas')
+//   .addEventListener(
+//     'click',
+//     (e) =>
+//       (document.body.style.backgroundColor =
+//         e.target.getAttribute('data-color') ??
+//         document.body.style.backgroundColor)
+//   );
+
+//..............we attach the click event listener directly to document.body,
+// document.body.addEventListener(
+//   'click',
+//   (e) =>
+//     (document.body.style.backgroundColor =
+//       e.target.getAttribute('data-color') ??
+//       document.body.style.backgroundColor)
+// );
+
+///.......ternary operator to set the background color of the document.body. If the clicked element has a data-color attribute, it uses that value; otherwise, it retains the existing background color.
+// document.body.addEventListener(
+//   'click',
+//   (e) =>
+//     (document.body.style.backgroundColor =
+//       e.target.getAttribute('data-color') ||
+//       document.body.style.backgroundColor)
+// );
+
+// ................we use destructuring to extract the target property directly within the arrow function and access the dataset.color property to get the color value. If the dataset.color value is falsy, it falls back to the existing background color.
+// document.body.onclick = ({ target }) =>
+//   (document.body.style.backgroundColor =
+//     target.dataset.color || document.body.style.backgroundColor);
+
+// arrow function for the click event, and we directly access the dataset.color property of the clicked element. If dataset.color is falsy, it falls back to the existing background color.
+// document.body.onclick = (e) =>
+//   (document.body.style.backgroundColor =
+//     e.target.dataset.color || document.body.style.backgroundColor);
